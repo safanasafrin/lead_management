@@ -149,7 +149,7 @@ class _DashBoardContentState extends State<DashBoardContent> {
                   children: [
                     Text('Managed by',style: TextStyle(color: Colors.black),),
                     SizedBox(
-                      width: 250,
+                      width: 280,
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
@@ -182,13 +182,13 @@ class _DashBoardContentState extends State<DashBoardContent> {
                 color: Colors.white,
                 child: Column(
                   children: [
-                    Text('Lead Status',style: TextStyle(color: Colors.black),),
+                    Text('Lead Status',style: TextStyle(color: Colors.black,)),
                     SizedBox(
                       height: 10,
                     ),
                     SizedBox(
-                      height: 150,
-                      width: 150,
+                      height: 160,
+                      width: 160,
                       child:PieChart(
                         PieChartData(
                           sections: [
@@ -213,7 +213,7 @@ class _DashBoardContentState extends State<DashBoardContent> {
             children: [
               Container(
                 height: 300,
-                width: 990,
+                width: MediaQuery.of(context).size.width * 0.8,
                 color: Colors.white,
               )
             ],
