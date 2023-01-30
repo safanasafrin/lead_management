@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lead_management/components/custom_appbar.dart';
 import 'package:lead_management/form/create_lead.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class DashBoardContent extends StatefulWidget {
   const DashBoardContent({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class DashBoardContent extends StatefulWidget {
 }
 
 class _DashBoardContentState extends State<DashBoardContent> {
+  int touchedIndex = -1;
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Container(
@@ -143,8 +145,31 @@ class _DashBoardContentState extends State<DashBoardContent> {
                 width: 450,
                 color: Colors.white,
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Managed by',style: TextStyle(color: Colors.black),),
+                    SizedBox(
+                      width: 250,
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: InkWell(
+                        onTap: () {
+                          // button tap action
+                        },
+                        child: Container(
+                          // padding: EdgeInsets.all(10),
+                          child: Row(
+                            children: [
+                              SizedBox(width: 10),
+                              Text("Filter"),
+                              Icon(Icons.filter_list_alt),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+
                   ],
               ),
               ),
@@ -155,9 +180,26 @@ class _DashBoardContentState extends State<DashBoardContent> {
                 height: 200,
                 width: 250,
                 color: Colors.white,
-                child: Row(
+                child: Column(
                   children: [
                     Text('Lead Status',style: TextStyle(color: Colors.black),),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      height: 150,
+                      width: 150,
+                      child:PieChart(
+                        PieChartData(
+                          sections: [
+                            PieChartSectionData(value: 70,color: Colors.red.shade900),
+                            PieChartSectionData(value: 7,color: Colors.deepOrange),
+                            PieChartSectionData(value: 23,color: Colors.blue.shade900),
+
+                          ]
+                        )
+                      ),
+                    )
                   ],
                 ),
               ),

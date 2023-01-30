@@ -27,7 +27,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
               color: Color(0xFF2A2E3E),
                 child: Column(
                   children: [
-                    DrawerHeader(child:Text('Logo',style: TextStyle(color: Colors.white,fontSize: 50),)),
+                    DrawerHeader(child:
+                    Image.asset('images/logo.png',height: 450,width: 350,)
+                    ),
                     ListTile(
                       leading: Icon(Icons.home_outlined,color: Colors.white,),
                       title: Text('Dashboard',style: TextStyle(color: Colors.white),),
