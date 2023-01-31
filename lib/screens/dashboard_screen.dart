@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lead_management/screens/dashboard_content.dart';
+import 'package:lead_management/responsive.dart';
 
 
 class DashboardScreen extends StatefulWidget {
@@ -20,7 +21,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
+            if(Responsive.isDesktop(context))
+              Expanded(
               //default so it takes 1/6 of screen
               flex:1,
               child: Container(
@@ -28,7 +30,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 child: Column(
                   children: [
                     DrawerHeader(child:
-                    Image.asset('images/logo.png',height: 450,width: 350,)
+                    Image.asset('images/logo.png',height: 400,width: 300,)
                     ),
                     ListTile(
                       leading: Icon(Icons.home_outlined,color: Colors.white,),
@@ -42,7 +44,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
             ),
             ),
-            Expanded(
+            if(Responsive.isDesktop(context))
+              Expanded(
               //it takes 5/6 of screen
               flex: 5,
               child: SingleChildScrollView(

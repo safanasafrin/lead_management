@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lead_management/screens/dashboard_screen.dart';
+import 'package:lead_management/responsive.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -16,6 +17,9 @@ class LoginScreen extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
+                // Colors.black87,
+                // Colors.black26,
+                // Colors.black12
                 Colors.purpleAccent.shade100,
                 Colors.indigoAccent.shade100
               ]
@@ -24,7 +28,6 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-
               Image.asset('images/logo.png',height: 280,width: 350),
               Container(
                 height: 350,
@@ -75,11 +78,13 @@ class LoginScreen extends StatelessWidget {
                       },
                       child: Container(
                         alignment: Alignment.center,
-                        width: 180,
+                        width: 100,
                         decoration: BoxDecoration(
-                          borderRadius:BorderRadius.circular(10),
+                          borderRadius:BorderRadius.circular(20.0),
                           gradient: LinearGradient(
                             colors: [
+                              // Colors.black26,
+                              // Colors.black38
                               Colors.indigoAccent,
                               Colors.purpleAccent,
 
@@ -88,7 +93,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(10.0),
-                          child: Text('Login',style: TextStyle(fontSize: 20),),
+                          child: Text('Login',style: TextStyle(fontSize: 20,),),
                         ),
                       ),
                     )

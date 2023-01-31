@@ -11,7 +11,6 @@ class DashBoardContent extends StatefulWidget {
 }
 
 class _DashBoardContentState extends State<DashBoardContent> {
-  int touchedIndex = -1;
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Container(
@@ -24,22 +23,66 @@ class _DashBoardContentState extends State<DashBoardContent> {
           ),
           Row(
             children: [
-              MaterialButton(onPressed: (){
-              },height: 30,
-                minWidth: 100,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),),
-                color: Colors.white,
-                child: Text('Ideassion',style: TextStyle(color: Colors.black,fontSize: 12),),
+              // MaterialButton(onPressed: (){
+              // },height: 30,
+              //   minWidth: 100,
+              //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),),
+              //   color: Colors.white,
+              //   child: Text('Ideassion',style: TextStyle(color: Colors.black,fontSize: 12),),
+              // ),
+              Container(
+                height: 30,
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+                  color: Colors.white,
+                  border: Border.all(color: Colors.black, width: 1.5),
+                ),
+                child:DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  icon:Image.asset('images/butterfly.png',height: 24,width: 23,),
+                  alignment: Alignment.center,
+                  focusColor: Colors.black12,
+                  underline: null,
+                  items: [
+                    DropdownMenuItem(
+                      child: Text(" Ideassion ",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
+                      value: "  Ideassion",
+                    ),
+                    DropdownMenuItem(
+                      child: Text(" ITS",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold)),
+                      value: " ITS",
+                    ),
+                    DropdownMenuItem(
+                      child: Text("IBCC",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold)),
+                      value: "IBCC",
+                    ),
+                    DropdownMenuItem(
+                      child: Text("IITT",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold)),
+                      value: "IITT",
+                    ),
+                    DropdownMenuItem(
+                      child: Text("TTL",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold)),
+                      value: "TTL",
+                    ),
+                  ],
+                  onChanged: (value) {
+                    // handle the change event
+                  },
+                   value: "  Ideassion",
+
+                ),
+              ),
               ),
               SizedBox(
                 width: 900,
               ),
               MaterialButton(onPressed:(){CreateLead();},
-                height: 30,
+                height: 35,
                 minWidth: 100,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
                 color: Colors.black,
-                child: Text('CREATE LEAD',style: TextStyle(color: Colors.white,fontSize: 10),),
+                child: Text('CREATE  LEAD',style: TextStyle(color: Colors.white,fontSize: 10),),
               ),
             ],
           ),
@@ -51,7 +94,7 @@ class _DashBoardContentState extends State<DashBoardContent> {
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.indigo.shade500, Colors.indigo.shade200],
+                    colors: [Colors.indigo.shade700, Colors.indigo.shade400,Colors.indigo.shade200],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -70,7 +113,7 @@ class _DashBoardContentState extends State<DashBoardContent> {
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.orange.shade800, Colors.orange.shade300],
+                    colors: [Colors.orange.shade800,Colors.orange.shade500, Colors.orange.shade200],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -89,7 +132,7 @@ class _DashBoardContentState extends State<DashBoardContent> {
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.green.shade800, Colors.green.shade200],
+                    colors: [Colors.green.shade900,Colors.green.shade500, Colors.green.shade200],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -108,7 +151,7 @@ class _DashBoardContentState extends State<DashBoardContent> {
               Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.redAccent.shade700, Colors.redAccent.shade100],
+                    colors: [Colors.red.shade900, Colors.red.shade300],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -161,9 +204,52 @@ class _DashBoardContentState extends State<DashBoardContent> {
                           // padding: EdgeInsets.all(10),
                           child: Row(
                             children: [
-                              SizedBox(width: 10),
-                              Text("Filter"),
-                              Icon(Icons.filter_list_alt),
+                              // SizedBox(width: 10),
+                              // Text("Filter"),
+                              // Icon(Icons.filter_list_alt),
+                              Container(
+                                height: 28,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  color: Colors.white,
+                                  border: Border.all(color: Colors.black, width: 1.0),
+                                ),
+                                child:DropdownButtonHideUnderline(
+                                  child: DropdownButton<String>(
+                                    alignment: Alignment.center,
+                                    focusColor: Colors.black12,
+                                    underline: null,
+                                    items: [
+                                      DropdownMenuItem(
+                                        child: Text(" Filter",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
+                                        value: " Filter",
+                                      ),
+                                      DropdownMenuItem(
+                                        child: Text("ITS",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold)),
+                                        value: "ITS",
+                                      ),
+                                      DropdownMenuItem(
+                                        child: Text("IBCC",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold)),
+                                        value: "IBCC",
+                                      ),
+                                      DropdownMenuItem(
+                                        child: Text("IITT",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold)),
+                                        value: "IITT",
+                                      ),
+                                      DropdownMenuItem(
+                                        child: Text("TTL",style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold)),
+                                        value: "TTL",
+                                      ),
+                                    ],
+                                    onChanged: (value) {
+                                      // handle the change event
+                                    },
+                                    value: " Filter",
+                                     icon:Icon(Icons.filter_list_alt,color: Colors.black,size: 20.0,),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -215,6 +301,8 @@ class _DashBoardContentState extends State<DashBoardContent> {
                 height: 300,
                 width: MediaQuery.of(context).size.width * 0.8,
                 color: Colors.white,
+                child:Positioned(
+                    child: Text('Pending proposals')),
               )
             ],
           ),
