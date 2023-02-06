@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lead_management/screens/dashboard_content.dart';
+import 'package:lead_management/screens/lead_screen.dart';
 import 'package:lead_management/responsive.dart';
 
 
@@ -33,10 +34,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     Image.asset('images/logo.png',height: 400,width: 300,)
                     ),
                     ListTile(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen()),);
+
+                      },
                       leading: Icon(Icons.home_outlined,color: Colors.white,),
                       title: Text('Dashboard',style: TextStyle(color: Colors.white),),
                     ),
                     ListTile(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => LeadScreen()),);
+
+                      },
                       leading: Icon(Icons.people_alt_outlined,color: Colors.white,),
                       title: Text('Leads',style: TextStyle(color: Colors.white),),
                     ),
