@@ -4,14 +4,8 @@ import 'package:lead_management/screens/lead_screen.dart';
 import 'package:lead_management/responsive.dart';
 
 
-class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
-
-  @override
-  State<DashboardScreen> createState() => _DashboardScreenState();
-}
-
-class _DashboardScreenState extends State<DashboardScreen> {
+class DashboardScreen extends StatelessWidget {
+  // const DashboardScreen({Key? key}) : super(key: key);
 
   bool isExpanded = false;
 
@@ -33,6 +27,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     DrawerHeader(child:
                     Image.asset('images/logo.png',height: 400,width: 300,)
                     ),
+
                     ListTile(
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => DashboardScreen()),);
@@ -58,6 +53,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               //it takes 5/6 of screen
               flex: 5,
               child: SingleChildScrollView(
+
                 //color: Colors.white,
                 child: DashBoardContent(),
               ),
